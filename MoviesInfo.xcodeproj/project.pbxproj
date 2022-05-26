@@ -18,6 +18,9 @@
 		41014906283CF3810024D135 /* RatingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41014905283CF3810024D135 /* RatingsView.swift */; };
 		41014908283CF3B80024D135 /* URLImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41014907283CF3B80024D135 /* URLImage.swift */; };
 		4101490A283CF4250024D135 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41014909283CF4250024D135 /* ImageLoader.swift */; };
+		4167545F283E227000BAE795 /* MovieViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4167545E283E227000BAE795 /* MovieViewModel.swift */; };
+		4181C30B283DE23700F85759 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4181C30A283DE23700F85759 /* Movie.swift */; };
+		4181C30D283DEA5600F85759 /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4181C30C283DEA5600F85759 /* HTTPClient.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +55,10 @@
 		41014905283CF3810024D135 /* RatingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingsView.swift; sourceTree = "<group>"; };
 		41014907283CF3B80024D135 /* URLImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLImage.swift; sourceTree = "<group>"; };
 		41014909283CF4250024D135 /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
+		4167545E283E227000BAE795 /* MovieViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieViewModel.swift; sourceTree = "<group>"; };
+		4181C30A283DE23700F85759 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
+		4181C30C283DEA5600F85759 /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
+		4181C30E283E054900F85759 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,9 +109,11 @@
 		410148D1283CEFB80024D135 /* MoviesInfo */ = {
 			isa = PBXGroup;
 			children = (
+				4181C30E283E054900F85759 /* Info.plist */,
 				41014904283CF33F0024D135 /* Loaders */,
 				41014903283CF2F20024D135 /* Controls */,
 				41014902283CF2DB0024D135 /* Extensions */,
+				4181C309283DE1DA00F85759 /* Model */,
 				41014901283CF2C00024D135 /* Services */,
 				41014900283CF2A90024D135 /* ViewModel */,
 				410148FD283CF0E80024D135 /* Utilities */,
@@ -160,6 +169,7 @@
 		41014900283CF2A90024D135 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				4167545E283E227000BAE795 /* MovieViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -167,6 +177,7 @@
 		41014901283CF2C00024D135 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				4181C30C283DEA5600F85759 /* HTTPClient.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -193,6 +204,14 @@
 				41014909283CF4250024D135 /* ImageLoader.swift */,
 			);
 			path = Loaders;
+			sourceTree = "<group>";
+		};
+		4181C309283DE1DA00F85759 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				4181C30A283DE23700F85759 /* Movie.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -325,9 +344,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4181C30B283DE23700F85759 /* Movie.swift in Sources */,
 				410148D5283CEFB80024D135 /* ContentView.swift in Sources */,
+				4181C30D283DEA5600F85759 /* HTTPClient.swift in Sources */,
 				410148D3283CEFB80024D135 /* MoviesInfoApp.swift in Sources */,
 				4101490A283CF4250024D135 /* ImageLoader.swift in Sources */,
+				4167545F283E227000BAE795 /* MovieViewModel.swift in Sources */,
 				410148FF283CF1370024D135 /* Constants.swift in Sources */,
 				41014908283CF3B80024D135 /* URLImage.swift in Sources */,
 				41014906283CF3810024D135 /* RatingsView.swift in Sources */,
@@ -492,7 +514,8 @@
 				DEVELOPMENT_TEAM = W749SDNNB4;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_FILE = MoviesInfo/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -521,7 +544,8 @@
 				DEVELOPMENT_TEAM = W749SDNNB4;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_FILE = MoviesInfo/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
