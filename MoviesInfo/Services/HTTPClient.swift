@@ -8,6 +8,14 @@
 import Foundation
 
 
+enum NetworkError: Error {
+    case badURL
+    case noData
+    case decodingError
+}
+
+
+
 class HTTPClient {
     
     // @Escaping Closure Runs After Execution of Function
@@ -23,7 +31,7 @@ class HTTPClient {
             }
             
             //   completionHandler: <#T##(Data?, URLResponse?, Error?) -> Void#>)
-
+            
             
             //Decoding Succesfull else decodingError
               guard let movies = try? JSONDecoder().decode(MovieResponse.self, from: data) else {
@@ -33,10 +41,3 @@ class HTTPClient {
         }.resume()
 }
 }
-
-enum NetworkError: Error {
-    case badURL
-    case noData
-    case decodingError
-}
-
