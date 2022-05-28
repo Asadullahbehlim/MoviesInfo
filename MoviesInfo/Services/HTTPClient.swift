@@ -14,9 +14,24 @@ enum NetworkError: Error {
     case decodingError
 }
 
-
-
 class HTTPClient {
+    
+    func getMovieDetailsBy(imdbId: String, completion: @escaping (Result<MovieDetail?,NetworkError>) -> Void) {
+        
+        guard let url = URL.forMoviesByImdbId(imdbId) else {
+            return completion(.failure(.badURL))
+        }
+        URLSession.shared.dataTask(with:url) { data, response, error in
+            
+            guard let data = data, error == nil else {
+                return completion(.failure(.noData))
+            }
+            guard let movieDetail = try? JSONDecoder().decode(MovieDetail.self, from: data) else {
+            return completion(.failure(.decodingError))
+            }
+            
+        }.resume()
+    }
     
     // @Escaping Closure Runs After Execution of Function
     func getMoviesBy(search: String, completion: @escaping (Result<[Movie]?,NetworkError>) -> Void) {
@@ -29,9 +44,7 @@ class HTTPClient {
             guard let data = data, error == nil else {
                 return completion(.failure(.noData))
             }
-            
             //   completionHandler: <#T##(Data?, URLResponse?, Error?) -> Void#>)
-            
             
             //Decoding Succesfull else decodingError
               guard let movies = try? JSONDecoder().decode(MovieResponse.self, from: data) else {
