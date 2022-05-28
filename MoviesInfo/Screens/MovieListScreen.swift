@@ -29,10 +29,24 @@ struct MovieListScreen: View {
                 .padding(.horizontal, 10)
                 .padding(.vertical, 4)
 
-            MovieListView(movies: self.movieListVM.movies)
+            Spacer()
                 .navigationTitle("Movies")
+            
+            if movieListVM.loadingState == .success {
+                MovieListView(movies: movieListVM.movies)
+            }
+            else if movieListVM.loadingState == .failed {
+                FailedView()
+            }
+            else if movieListVM.loadingState == .loading {
+                LoadingView()
+            }
+          //  MovieListView(movies: self.movieListVM.movies)
+           Spacer()
+                
         }
-        //.padding()
+       
+        .padding()
         .embedNavigationView()
     }
 }

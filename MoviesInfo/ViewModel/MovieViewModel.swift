@@ -8,22 +8,35 @@
 import Foundation
 import SwiftUI
 
-class MovieListViewModel : ObservableObject{
+class MovieListViewModel : ViewModelBase {
     
   @Published  var movies = [MovieViewModel]()
     let httpClient = HTTPClient()
     
      func searchByName(_ name: String) {
-        httpClient.getMoviesBy(search: name) {
+       
+         if name.isEmpty {
+             self.loadingState = .failed
+             return
+         }
+         
+         self.loadingState = .loading
+         
+         httpClient.getMoviesBy(search: name.trimmedAndEscaped()) {
             Result in switch
             Result {
             case.success(let movies) :
                 if let movies = movies {
                     DispatchQueue.main.async {
                         self.movies = movies.map(MovieViewModel.init)
+                        self.loadingState = .success
                     }
                 }
             case.failure(let error):
+                
+                DispatchQueue.main.async {
+                self.loadingState = .failed
+                }
                 print(error.localizedDescription)
             }
             

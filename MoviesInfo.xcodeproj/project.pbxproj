@@ -21,6 +21,10 @@
 		4154CC82283F448700BB0408 /* MovieListScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4154CC81283F448700BB0408 /* MovieListScreen.swift */; };
 		4154CC84283F4B6900BB0408 /* MovieListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4154CC83283F4B6900BB0408 /* MovieListView.swift */; };
 		4167545F283E227000BAE795 /* MovieViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4167545E283E227000BAE795 /* MovieViewModel.swift */; };
+		41677BDD2841DE7400A3CD9D /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41677BDC2841DE7400A3CD9D /* String+Extension.swift */; };
+		41677BDF2841EB4600A3CD9D /* FailedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41677BDE2841EB4600A3CD9D /* FailedView.swift */; };
+		41677BE12841EBD200A3CD9D /* ViewModelBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41677BE02841EBD200A3CD9D /* ViewModelBase.swift */; };
+		41677BE32841F1DE00A3CD9D /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41677BE22841F1DE00A3CD9D /* LoadingView.swift */; };
 		41819F26283F6ED3007F2525 /* URL+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41819F25283F6ED3007F2525 /* URL+Extension.swift */; };
 		41819F28283F7417007F2525 /* View+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41819F27283F7417007F2525 /* View+Extension.swift */; };
 		4181C30B283DE23700F85759 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4181C30A283DE23700F85759 /* Movie.swift */; };
@@ -62,6 +66,10 @@
 		4154CC81283F448700BB0408 /* MovieListScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListScreen.swift; sourceTree = "<group>"; };
 		4154CC83283F4B6900BB0408 /* MovieListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListView.swift; sourceTree = "<group>"; };
 		4167545E283E227000BAE795 /* MovieViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieViewModel.swift; sourceTree = "<group>"; };
+		41677BDC2841DE7400A3CD9D /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
+		41677BDE2841EB4600A3CD9D /* FailedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FailedView.swift; sourceTree = "<group>"; };
+		41677BE02841EBD200A3CD9D /* ViewModelBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelBase.swift; sourceTree = "<group>"; };
+		41677BE22841F1DE00A3CD9D /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		41819F25283F6ED3007F2525 /* URL+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+Extension.swift"; sourceTree = "<group>"; };
 		41819F27283F7417007F2525 /* View+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extension.swift"; sourceTree = "<group>"; };
 		4181C30A283DE23700F85759 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
@@ -164,6 +172,8 @@
 				4154CC83283F4B6900BB0408 /* MovieListView.swift */,
 				410148D2283CEFB80024D135 /* MoviesInfoApp.swift */,
 				410148D4283CEFB80024D135 /* ContentView.swift */,
+				41677BDE2841EB4600A3CD9D /* FailedView.swift */,
+				41677BE22841F1DE00A3CD9D /* LoadingView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -180,6 +190,7 @@
 			isa = PBXGroup;
 			children = (
 				4167545E283E227000BAE795 /* MovieViewModel.swift */,
+				41677BE02841EBD200A3CD9D /* ViewModelBase.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -197,6 +208,7 @@
 			children = (
 				41819F25283F6ED3007F2525 /* URL+Extension.swift */,
 				41819F27283F7417007F2525 /* View+Extension.swift */,
+				41677BDC2841DE7400A3CD9D /* String+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -368,11 +380,15 @@
 				4154CC84283F4B6900BB0408 /* MovieListView.swift in Sources */,
 				4181C30B283DE23700F85759 /* Movie.swift in Sources */,
 				410148D5283CEFB80024D135 /* ContentView.swift in Sources */,
+				41677BE32841F1DE00A3CD9D /* LoadingView.swift in Sources */,
 				4181C30D283DEA5600F85759 /* HTTPClient.swift in Sources */,
+				41677BE12841EBD200A3CD9D /* ViewModelBase.swift in Sources */,
 				41819F26283F6ED3007F2525 /* URL+Extension.swift in Sources */,
 				410148D3283CEFB80024D135 /* MoviesInfoApp.swift in Sources */,
 				4101490A283CF4250024D135 /* ImageLoader.swift in Sources */,
+				41677BDD2841DE7400A3CD9D /* String+Extension.swift in Sources */,
 				4167545F283E227000BAE795 /* MovieViewModel.swift in Sources */,
+				41677BDF2841EB4600A3CD9D /* FailedView.swift in Sources */,
 				410148FF283CF1370024D135 /* Constants.swift in Sources */,
 				41819F28283F7417007F2525 /* View+Extension.swift in Sources */,
 				41014908283CF3B80024D135 /* URLImage.swift in Sources */,
