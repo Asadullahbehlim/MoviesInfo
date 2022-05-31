@@ -14,8 +14,6 @@ struct MovieListScreen: View {
     
     init() {
         self.movieListVM = MovieListViewModel()
- //       self.movieListVM.searchByName("batman")
-        
     }
     
     var body: some View {

@@ -7,7 +7,6 @@
 
 import Foundation
 
-
 enum NetworkError: Error {
     case badURL
     case noData
@@ -16,7 +15,7 @@ enum NetworkError: Error {
 
 class HTTPClient {
     
-    func getMovieDetailsBy(imdbId: String, completion: @escaping (Result<MovieDetail?,NetworkError>) -> Void) {
+    func getMovieDetailsBy(imdbId: String, completion: @escaping (Result<MovieDetail,NetworkError>) -> Void) {
         
         guard let url = URL.forMoviesByImdbId(imdbId) else {
             return completion(.failure(.badURL))
@@ -29,7 +28,7 @@ class HTTPClient {
             guard let movieDetail = try? JSONDecoder().decode(MovieDetail.self, from: data) else {
             return completion(.failure(.decodingError))
             }
-            
+            return completion(.success(movieDetail))
         }.resume()
     }
     
@@ -44,13 +43,17 @@ class HTTPClient {
             guard let data = data, error == nil else {
                 return completion(.failure(.noData))
             }
-            //   completionHandler: <#T##(Data?, URLResponse?, Error?) -> Void#>)
+          
             
             //Decoding Succesfull else decodingError
               guard let movies = try? JSONDecoder().decode(MovieResponse.self, from: data) else {
               return completion(.failure(.decodingError))
               }
             return completion(.success(movies.movies))
+            
         }.resume()
 }
 }
+
+
+

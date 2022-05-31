@@ -24,22 +24,25 @@ struct ExtractedView: View {
     
     var body: some View {
         HStack(alignment: .top){
-            URLImage(url: movie.poster)
-                .scaledToFill()
-                .frame(width: 120, height: 120, alignment: .top)
-                .cornerRadius(12)
-                .shadow(color:.black.opacity(0.5), radius: 3, x: 3, y: 3)
-            
-            VStack(alignment: .leading, spacing: 10) {
-                Text((movie.title))
-                    .font(.headline)
+            NavigationLink (destination: MovieDetailScreen(imdbId: movie.imdbId)) {
+                URLImage(url: movie.poster)
+                    .scaledToFill()
+                    .frame(width: 100, height: 100, alignment: .top)
+                    .cornerRadius(12)
+                    .shadow(color:.black.opacity(0.5), radius: 3, x: 3, y: 3)
                 
-                Text(movie.year)
-                    .font(.headline)
-                    .opacity(0.5)
-                    .padding(.top, 5)
-            }.padding(5)
-            Spacer()
+                VStack(alignment: .leading, spacing: 8) {
+                    Text((movie.title))
+                        .font(.headline)
+                    
+                    Text(movie.year)
+                        .font(.headline)
+                        .opacity(0.5)
+                        .padding(.top, 5)
+                }.padding(5)
+              //  Spacer()
+            }
+            
         }.containerShape(Rectangle())
     }
 }
